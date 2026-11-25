@@ -1,0 +1,51 @@
+Running Question 2 on device: cuda
+
+Training Part (b): Spatially Permuted MLP and CNN...
+Training Part (c): Grayscale CNN & MLP...
+
+============================================================================
+Model              |    Params |  Clean (a) | Permuted (b) | Grayscale (c)
+----------------------------------------------------------------------------
+MLP-Regularized    |   402,634 |     54.04% |       53.93% |        44.59%
+ConvNet-Matched    |   402,556 |     75.22% |       51.22% |        72.57%
+============================================================================
+
+--- ConvNet-Matched Mean Max-Softmax Confidence (Test Set) ---
+Clean RGB (a) | Correct Preds: 87.47% | Misclassified (Errors): 65.50%
+Permuted  (b) | Correct Preds: 70.53% | Misclassified (Errors): 53.45%
+Grayscale (c) | Correct Preds: 87.00% | Misclassified (Errors): 64.63%
+Running Question 3 Part (a) on device: cuda
+
+Training ConvAutoencoder with Bottleneck d = 32...
+  [d= 32] Epoch  1/30 | Val MSE: 0.585008
+  [d= 32] Epoch 10/30 | Val MSE: 0.241425
+  [d= 32] Epoch 20/30 | Val MSE: 0.238770
+  [d= 32] Epoch 30/30 | Val MSE: 0.233402
+  Saved weights to cae_d32.pt
+
+Training ConvAutoencoder with Bottleneck d = 128...
+  [d=128] Epoch  1/30 | Val MSE: 0.498823
+  [d=128] Epoch 10/30 | Val MSE: 0.160861
+  [d=128] Epoch 20/30 | Val MSE: 0.133252
+  [d=128] Epoch 30/30 | Val MSE: 0.129961
+  Saved weights to cae_d128.pt
+
+Training ConvAutoencoder with Bottleneck d = 512...
+  [d=512] Epoch  1/30 | Val MSE: 0.452305
+  [d=512] Epoch 10/30 | Val MSE: 0.132406
+  [d=512] Epoch 20/30 | Val MSE: 0.089848
+  [d=512] Epoch 30/30 | Val MSE: 0.078233
+  Saved weights to cae_d512.pt
+
+====================================================================
+QUESTION 3 PART (a) DELIVERABLES SUMMARY
+====================================================================
+Bottleneck (d)  |   Trainable Params |   Validation MSE
+--------------------------------------------------------------------
+d = 32          |            320,163 |         0.233105
+d = 128         |            713,475 |         0.122526
+d = 512         |          2,286,723 |         0.077347  <-- Selected
+--------------------------------------------------------------------
+Selected Model (d = 512) Official Test Set MSE: 0.077737
+Saved selected model weights to: cae_selected_clean.pt
+====================================================================

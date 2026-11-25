@@ -1,0 +1,22 @@
+Running on device: cuda
+
+--- Model Parameter Comparison ---
+MLP-Regularized Params: 402,634
+ConvNet-Matched Params: 402,556
+
+Training MLP-Regularized...
+Training ConvNet-Matched...
+
+--- Validation Accuracy Across Horizontal Shifts ---
+MLP-Regularized  | 0px: 54.10% | -4px: 46.46% | +4px: 46.10% | -6px: 42.14% (Drop: 11.96%)
+ConvNet-Matched  | 0px: 75.86% | -4px: 68.78% | +4px: 69.58% | -6px: 60.62% (Drop: 15.24%)
+
+--- Final Official Test Set Results (Evaluated Once After Locking Choices) ---
+MLP-Regularized | Best Val: 54.10% | Final Test: 54.04%
+ConvNet-Matched | Best Val: 75.86% | Final Test: 75.22%
+
+--- Validation Accuracy & Relative Drop Across Horizontal Shifts ---
+MLP-Regularized  | 0px: 54.10% | -4px: 46.46% | +4px: 46.10% | -6px: 42.14% | +6px: 41.82%
+                 -> At -6px: Raw Drop = 11.96% | Relative Drop = 22.11%
+ConvNet-Matched  | 0px: 75.86% | -4px: 68.78% | +4px: 69.58% | -6px: 60.62% | +6px: 60.58%
+                 -> At -6px: Raw Drop = 15.24% | Relative Drop = 20.09%

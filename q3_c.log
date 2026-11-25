@@ -1,0 +1,24 @@
+Running Question 3 Part (c) on device: cuda
+
+Probing frozen encoder: CAE-Small (d=32) (cae_d32.pt)...
+  Best C=0.01 | Val Probe Acc: 33.42% | Test Probe Acc: 33.47% | Test MSE: 0.236691
+
+Probing frozen encoder: CAE-Medium (d=128) (cae_d128.pt)...
+  Best C=0.01 | Val Probe Acc: 39.02% | Test Probe Acc: 38.39% | Test MSE: 0.123978
+
+Probing frozen encoder: CAE-Large (d=512) (cae_d512.pt)...
+  Best C=1.0 | Val Probe Acc: 48.48% | Test Probe Acc: 48.95% | Test MSE: 0.077737
+
+Probing frozen encoder: DAE-Large (d=512) (dae_d512.pt)...
+  Best C=1.0 | Val Probe Acc: 49.36% | Test Probe Acc: 49.75% | Test MSE: 0.111762
+
+======================================================================================
+QUESTION 3 PART (c) DELIVERABLES SUMMARY (OFFICIAL TEST SET)
+======================================================================================
+Model                | Bottleneck |  Clean Test MSE |  Val Probe Acc |  Test Probe Acc
+--------------------------------------------------------------------------------------
+CAE-Small (d=32)     |         32 |        0.236691 |         33.42% |          33.47%
+CAE-Medium (d=128)   |        128 |        0.123978 |         39.02% |          38.39%
+CAE-Large (d=512)    |        512 |        0.077737 |         48.48% |          48.95%
+DAE-Large (d=512)    |        512 |        0.111762 |         49.36% |          49.75%
+======================================================================================
